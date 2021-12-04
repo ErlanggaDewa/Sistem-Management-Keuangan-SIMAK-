@@ -33,7 +33,7 @@ public class LoginController {
         SceneUtils.switchTo("register.fxml", mouseEvent);
     }
 
-    public void loginAction(ActionEvent actionEvent) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public void loginAction(ActionEvent actionEvent) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException, IOException {
         storeData.put("email", email.getText());
         storeData.put("password", password.getText());
         if (!email.getText().isBlank() && !password.getText().isBlank()) {
@@ -45,6 +45,7 @@ public class LoginController {
                 do {
                     String passwordHashed = rs.getString("password");
                     if (Authentication.validatePassword(password.getText(), passwordHashed)) {
+                        SceneUtils.switchTo("product.fxml");
                     } else {
                         loginMessage.setText("User or Password Incorrect");
                     }
