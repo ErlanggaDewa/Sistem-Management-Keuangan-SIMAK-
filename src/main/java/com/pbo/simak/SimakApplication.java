@@ -1,6 +1,6 @@
 package com.pbo.simak;
 
-import com.pbo.simak.utils.SwitchScene;
+import com.pbo.simak.utils.SceneUtils;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -11,7 +11,7 @@ public class SimakApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        SwitchScene.switchTo("produk.fxml", stage);
+        SceneUtils.switchTo("product.fxml", stage);
 //        FXMLLoader fxmlLoader = new FXMLLoader(SimakApplication.class.getResource("register.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load());
 //        stage.setTitle("Sistem Management Keuangan");

@@ -2,10 +2,9 @@ package com.pbo.simak.controller;
 
 import com.pbo.simak.middleware.Authentication;
 import com.pbo.simak.model.UserModel;
-import com.pbo.simak.utils.SwitchScene;
+import com.pbo.simak.utils.SceneUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -31,7 +30,7 @@ public class LoginController {
 
 
     public void registerPage(MouseEvent mouseEvent) throws IOException {
-        SwitchScene.switchTo("register.fxml", mouseEvent);
+        SceneUtils.switchTo("register.fxml", mouseEvent);
     }
 
     public void loginAction(ActionEvent actionEvent) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException {

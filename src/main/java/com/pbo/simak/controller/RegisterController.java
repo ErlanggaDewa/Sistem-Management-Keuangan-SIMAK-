@@ -1,6 +1,6 @@
 package com.pbo.simak.controller;
 
-import com.pbo.simak.utils.SwitchScene;
+import com.pbo.simak.utils.SceneUtils;
 import com.pbo.simak.model.UserModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,6 +53,6 @@ public class RegisterController {
 
 
     public void loginPageRedirect(MouseEvent mouseEvent) throws IOException {
-        SwitchScene.switchTo("login.fxml", mouseEvent);
+        SceneUtils.switchTo("login.fxml", mouseEvent);
     }
 }
