@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.ProdukController">
+   <children>
+      <TableView layoutX="123.0" layoutY="203.0" prefHeight="319.0" prefWidth="754.0">
+        <columns>
+          <TableColumn fx:id="kolomNomor" minWidth="0.0" prefWidth="74.4000244140625" text="No." />
+          <TableColumn fx:id="kolomNamaProduk" minWidth="0.0" prefWidth="260.7999725341797" text="Nama Produk" />
+            <TableColumn fx:id="kolomHargaProduk" minWidth="0.0" prefWidth="227.99993896484375" text="Harga" />
+            <TableColumn fx:id="kolomNamaKategori" minWidth="0.0" prefWidth="188.80001220703127" text="kategori" />
+        </columns>
+      </TableView>
+      <Pane layoutX="81.0" layoutY="140.0" prefHeight="7.0" prefWidth="850.0" style="-fx-background-color: gray;" />
+      <Label layoutX="123.0" layoutY="55.0" prefHeight="18.0" prefWidth="302.0" text="Daftar Produk" textFill="#d7d7d7">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
