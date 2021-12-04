@@ -4,18 +4,11 @@ import com.pbo.simak.database.DatabaseConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
 public class ProductModel extends DatabaseConnection {
-
-    private static final DatabaseConnection connectNow = new DatabaseConnection();
-    private static final Connection connectDB = connectNow.getConnection();
-    private static PreparedStatement pst;
-
 
     protected int id;
     protected String productName, productPrice, productCategory;
