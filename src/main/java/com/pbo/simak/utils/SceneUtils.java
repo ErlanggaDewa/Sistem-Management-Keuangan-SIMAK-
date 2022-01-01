@@ -17,7 +17,7 @@ public class SceneUtils {
         loader.setLocation(SimakApplication.class.getResource(nameFXML));
 
         Parent root = loader.load();
-        Stage stage = new Stage();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -34,16 +34,7 @@ public class SceneUtils {
         stage.show();
     }
 
-    public static void switchTo(String nameFXML, Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(SimakApplication.class.getResource(nameFXML));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
-    }
+    
 
     public static void addView(String nameFXML) throws IOException {
         FXMLLoader loader = new FXMLLoader();

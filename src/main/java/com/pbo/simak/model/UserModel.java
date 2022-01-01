@@ -17,13 +17,13 @@ public class UserModel extends DatabaseConnection {
         try {
             String hashedPassword = Authentication.generateStrongPasswordHash(storeData.get("password"));
 
-            String sql = String.format("SELECT * FROM user_account WHERE email='%s'", storeData.get("email"));
+            String sql = String.format("SELECT * FROM user WHERE email='%s'", storeData.get("email"));
             pst = connectDB.prepareStatement(sql);
             ResultSet rs = pst.executeQuery(sql);
 
             while (rs.next()) {
                 if (rs.getString("email").equalsIgnoreCase(storeData.get("email"))) {
-                    sql = "UPDATE user_account SET full_name='%s', password='%s' WHERE email='%s'";
+                    sql = "UPDATE user SET full_name='%s', password='%s' WHERE email='%s'";
                     sql = String.format(sql, storeData.get("fullName"), hashedPassword, storeData.get("email"));
 
                     int rowAffected = pst.executeUpdate(sql);
@@ -39,7 +39,7 @@ public class UserModel extends DatabaseConnection {
             }
 
 
-            sql = "INSERT INTO user_account VALUES ('0', '%s', '%s', '%s')";
+            sql = "INSERT INTO user VALUES ('0', '%s', '%s', '%s')";
             sql = String.format(sql, storeData.get("fullName"), storeData.get("email"), hashedPassword);
 
             int rowAffected = pst.executeUpdate(sql);
@@ -54,7 +54,7 @@ public class UserModel extends DatabaseConnection {
     }
 
     public static ResultSet getByEmail(String email) throws SQLException {
-        String sql = "SELECT * FROM user_account WHERE email='%s'";
+        String sql = "SELECT * FROM user WHERE email='%s'";
         sql = String.format(sql, email);
         pst = connectDB.prepareStatement(sql);
         return pst.executeQuery(sql);

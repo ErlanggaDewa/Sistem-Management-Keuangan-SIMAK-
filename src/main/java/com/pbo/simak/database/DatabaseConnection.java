@@ -9,7 +9,7 @@ public class DatabaseConnection {
     protected static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     protected static final String DB_URL = "jdbc:mysql://localhost/simak";
     protected static final String USERNAME = "root";
-    protected static final String PASS = "root";
+    protected static final String PASS = "";
 
     protected static final DatabaseConnection connectNow = new DatabaseConnection();
     protected static final Connection connectDB = connectNow.getConnection();

@@ -10,19 +10,32 @@ import java.util.HashMap;
 
 public class ProductModel extends DatabaseConnection {
 
-    protected int id;
+    protected int productId;
     protected String productName, productPrice, productCategory;
 
 
     public ProductModel() {
     }
 
-
     public ProductModel(int id, String productName, String productPrice, String productCategory) {
-        this.id = id;
+        this.productId = id;
         this.productName = productName;
         this.productPrice = productPrice;
         this.productCategory = productCategory;
+    }
+
+    public static ObservableList<String> getAllProductNames() throws SQLException {
+        String sql = "SELECT * FROM product";
+
+        pst = connectDB.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+
+        ObservableList<String> productNames = FXCollections.observableArrayList();
+
+        while (rs.next()) {
+            productNames.add(rs.getString("product_name"));
+        }
+        return productNames;
     }
 
     public static ObservableList<ProductModel> getAllProduct() throws SQLException {
@@ -66,12 +79,21 @@ public class ProductModel extends DatabaseConnection {
 
     }
 
-    public int getId() {
-        return id;
+    public static int update(HashMap<String, String> product) throws SQLException {
+        String sql = "UPDATE product SET product_name = '%s', product_price = '%s', product_category = '%s' WHERE product_id = '%s' ";
+
+        sql = String.format(sql, product.get("productName"), product.get("productPrice"),
+                product.get("productCategory"), product.get("productId"));
+        pst = connectDB.prepareStatement(sql);
+        return pst.executeUpdate(sql);
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {

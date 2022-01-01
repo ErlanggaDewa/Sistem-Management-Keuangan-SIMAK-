@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.TransactionController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="862.0" spacing="20.0" style="-fx-background-color: #206A5D;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#viewDashboard" prefHeight="38.0" prefWidth="148.0" style="-fx-background-color: #333333;" text="DASHBOARD" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee UI Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#viewProduct" prefHeight="138.0" prefWidth="123.0" style="-fx-background-color: #333333;" text="PRODUK" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/package.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#viewTransaction" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: #333333;" text="PENJUALAN" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/transfer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="74.0" prefWidth="106.0" style="-fx-background-color: #CF3030;" text="LOGOUT" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="215.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+         </padding>
+      </HBox>
+      <Pane layoutX="862.0" prefHeight="700.0" prefWidth="374.0" style="-fx-border-radius: 20; -fx-background-color: #719192;">
+         <children>
+            <TextField fx:id="transactiontId" layoutX="41.0" layoutY="104.0" prefHeight="30.0" prefWidth="364.0" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="37.0" layoutY="32.0" prefHeight="27.0" prefWidth="309.0" text="Transaksi Produk" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="28.0" layoutY="78.0" prefHeight="3.0" prefWidth="328.0" style="-fx-background-color: black;" />
+            <Label fx:id="transactionMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="89.0" prefHeight="30.0" prefWidth="309.0" textAlignment="CENTER" textFill="#ffddb5">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="134.0" prefHeight="20.0" prefWidth="122.0" text="Nama Produk" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="productName" layoutX="41.0" layoutY="173.0" prefHeight="25.0" prefWidth="302.0" promptText="Pilih Produk" />
+            <Label layoutX="41.0" layoutY="221.0" prefHeight="20.0" prefWidth="115.0" text="Jumlah Barang" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="transactionCount" layoutX="41.0" layoutY="253.0" prefHeight="30.0" prefWidth="302.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="37.0" layoutY="354.0" prefHeight="20.0" prefWidth="115.0" text="Keterangan" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="37.0" layoutY="387.0" prefHeight="30.0" prefWidth="302.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="36.0" layoutY="564.0" mnemonicParsing="false" onAction="#submitTransactionAction" prefHeight="36.0" prefWidth="302.0" style="-fx-background-color: green;" text="Submit" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="37.0" layoutY="625.0" mnemonicParsing="false" onAction="#deleteTransactionAcction" prefHeight="37.0" prefWidth="302.0" style="-fx-background-color: #960606;" text="Hapus" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="transactionDescription" layoutX="37.0" layoutY="430.0" prefHeight="110.0" prefWidth="302.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="transactionTable" layoutX="46.0" layoutY="239.0" onMouseClicked="#getSelectedProduct" prefHeight="408.0" prefWidth="770.0">
+         <columns>
+            <TableColumn fx:id="colTransactionId" minWidth="0.0" prefWidth="56.000030517578125" text="ID" />
+            <TableColumn fx:id="colProductName" minWidth="0.0" prefWidth="145.59994506835938" text="Nama Produk" />
+            <TableColumn fx:id="colUnit" minWidth="0.0" prefWidth="87.19996643066406" text="Jumlah Unit" />
+            <TableColumn fx:id="colTotalPrice" minWidth="0.0" prefWidth="178.4000244140625" text="Total Harga" />
+            <TableColumn fx:id="colDescription" minWidth="0.0" prefWidth="289.59991455078125" text="Keterangan" />
+         </columns>
+      </TableView>
+      <Label layoutX="47.0" layoutY="131.0" prefHeight="18.0" prefWidth="302.0" text="Transaksi Penjualan" textFill="#d7d7d7">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Pane layoutX="47.0" layoutY="200.0" prefHeight="3.0" prefWidth="770.0" style="-fx-background-color: gray;" />
+   </children>
+</AnchorPane>
