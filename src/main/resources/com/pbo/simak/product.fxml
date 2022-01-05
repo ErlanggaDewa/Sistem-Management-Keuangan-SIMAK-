@@ -81,7 +81,7 @@
                     </font>
                 </Label>
                 <Pane layoutX="28.0" layoutY="99.0" prefHeight="3.0" prefWidth="388.0" style="-fx-background-color: black;" />
-                <Label fx:id="ProductMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="72.0" layoutY="123.0" prefHeight="30.0" prefWidth="309.0" textAlignment="CENTER" textFill="#ffddb5">
+                <Label fx:id="productMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="72.0" layoutY="123.0" prefHeight="30.0" prefWidth="309.0" textAlignment="CENTER" textFill="#ffddb5">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -138,19 +138,19 @@
                 </TextField>
             </children>
         </Pane>
-        <TableView fx:id="productTable" layoutX="123.0" layoutY="236.0" onMouseClicked="#getSelectedProduct" prefHeight="408.0" prefWidth="618.0">
+        <TableView fx:id="productTable" layoutX="65.0" layoutY="240.0" onMouseClicked="#getSelectedProduct" prefHeight="408.0" prefWidth="719.0">
             <columns>
                 <TableColumn fx:id="colProductId" minWidth="0.0" prefWidth="62.399993896484375" text="ID" />
-                <TableColumn fx:id="colProductName" minWidth="0.0" prefWidth="185.5999755859375" text="Nama Produk" />
-                <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="176.00006103515625" text="Harga" />
-                <TableColumn fx:id="colCategory" minWidth="0.0" prefWidth="182.39996337890625" text="Kategori" />
+                <TableColumn fx:id="colProductName" minWidth="0.0" prefWidth="256.79994201660156" text="Nama Produk" />
+                <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="205.60003662109375" text="Harga" />
+                <TableColumn fx:id="colCategory" minWidth="0.0" prefWidth="180.79998779296875" text="Kategori" />
             </columns>
         </TableView>
-        <Label layoutX="123.0" layoutY="128.0" prefHeight="18.0" prefWidth="302.0" text="Daftar Produk" textFill="#d7d7d7">
+        <Label layoutX="65.0" layoutY="125.0" prefHeight="18.0" prefWidth="302.0" text="Daftar Produk" textFill="#d7d7d7">
             <font>
                 <Font name="System Bold" size="31.0" />
             </font>
         </Label>
-        <Pane layoutX="123.0" layoutY="195.0" prefHeight="3.0" prefWidth="618.0" style="-fx-background-color: gray;" />
+        <Pane layoutX="64.0" layoutY="195.0" prefHeight="3.0" prefWidth="719.0" style="-fx-background-color: gray;" />
     </children>
 </AnchorPane>

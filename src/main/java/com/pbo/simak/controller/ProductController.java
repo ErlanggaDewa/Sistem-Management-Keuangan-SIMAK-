@@ -1,5 +1,6 @@
 package com.pbo.simak.controller;
 
+import com.pbo.simak.middleware.Validation;
 import com.pbo.simak.model.ProductModel;
 import com.pbo.simak.utils.SceneUtils;
 import javafx.collections.FXCollections;
@@ -37,7 +38,7 @@ public class ProductController implements Initializable {
     @FXML
     private TableColumn<ProductModel, String> colCategory;
     @FXML
-    private Label ProductMsg;
+    private Label productMsg;
     @FXML
     private TextField productCategory;
     @FXML
@@ -72,9 +73,9 @@ public class ProductController implements Initializable {
 
         int status = ProductModel.destroy(selectedProduct.get("productId"));
         if (status == 0) {
-            ProductMsg.setText("Gagal Menghapus Data");
+            productMsg.setText("Gagal Menghapus Data");
         } else if (status == 1) {
-            ProductMsg.setText("Berhasil menghapus Data");
+            productMsg.setText("Berhasil menghapus Data");
         }
 
         loadProduct();
@@ -82,7 +83,7 @@ public class ProductController implements Initializable {
     }
 
     public void getSelectedProduct(MouseEvent event) {
-        int index = -1;
+        int index;
         index = productTable.getSelectionModel().getSelectedIndex();
 
         if (index <= -1) {
@@ -104,6 +105,13 @@ public class ProductController implements Initializable {
 
 
     public void submitProductAction(ActionEvent actionEvent) throws SQLException {
+        boolean isNumber = Validation.validateNumber(productPrice.getText());
+
+        if (!isNumber) {
+            productMsg.setText("Harga Harus Berupa Angka!");
+            return;
+        }
+
         storeData.put("productName", productName.getText());
         storeData.put("productPrice", productPrice.getText());
         storeData.put("productCategory", productCategory.getText());
@@ -111,31 +119,34 @@ public class ProductController implements Initializable {
             int rowAffected = ProductModel.store(storeData);
 
             if (rowAffected == 1) {
-                ProductMsg.setText("Berhasil Menambah Data");
+                productMsg.setText("Berhasil Menambah Data");
                 productCategory.clear();
                 productPrice.clear();
                 productName.clear();
                 loadProduct();
             } else {
-                ProductMsg.setText("Gagal Menambah Data");
+                productMsg.setText("Gagal Menambah Data");
             }
         } else {
-            ProductMsg.setText("Data Tidak Boleh Kosong");
+            productMsg.setText("Data Tidak Boleh Kosong");
         }
 
     }
 
     public void updateProductAcction(ActionEvent actionEvent) throws SQLException {
-        selectedProduct.put("productId", productId.getText());
-        selectedProduct.put("productName", productName.getText());
-        selectedProduct.put("productPrice", productPrice.getText());
-        selectedProduct.put("productCategory", productCategory.getText());
-        int status = ProductModel.update(selectedProduct);
+        storeData.put("productId", productId.getText());
+        storeData.put("productName", productName.getText());
+        storeData.put("productPrice", productPrice.getText());
+        storeData.put("productCategory", productCategory.getText());
+        int status = ProductModel.update(storeData);
         if (status == 0) {
-            ProductMsg.setText("Gagal Mengedit Data");
+            productMsg.setText("Gagal Mengedit Data");
         } else if (status == 1) {
-            ProductMsg.setText("Berhasil Mengedit Data");
+            productMsg.setText("Berhasil Mengedit Data");
         }
+        productCategory.clear();
+        productPrice.clear();
+        productName.clear();
         loadProduct();
     }
 

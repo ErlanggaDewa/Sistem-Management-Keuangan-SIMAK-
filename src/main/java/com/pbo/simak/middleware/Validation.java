@@ -12,4 +12,8 @@ public class Validation {
 
         return matcher.matches();
     }
+
+    public static boolean validateNumber(String text) {
+        return text.matches("\\d*");
+    }
 }

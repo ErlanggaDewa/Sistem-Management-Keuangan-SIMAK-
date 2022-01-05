@@ -52,18 +52,7 @@ public class TransactionModel extends DatabaseConnection {
     }
 
     public static int store(HashMap<String, String> storeData) throws SQLException {
-
-        ObservableList<ProductModel> selectedList = FXCollections.observableArrayList(ProductModel.getAllProduct());
-
-        AtomicInteger totalPrice = new AtomicInteger();
-        selectedList.forEach(item -> {
-            if (item.getProductName().equals(storeData.get("productName"))) {
-                int hargaBarang = Integer.parseInt(item.getProductPrice());
-                int unitBarang = Integer.parseInt(storeData.get("productCount"));
-                totalPrice.set(hargaBarang * unitBarang);
-            }
-        });
-
+        int totalPrice = selectedList(storeData);
 
         String sql = "INSERT INTO transaction_product VALUES (0, '%s', '%s', '%s', '%s', '%s')";
 
@@ -79,6 +68,32 @@ public class TransactionModel extends DatabaseConnection {
         sql = String.format(sql, id);
         pst = connectDB.prepareStatement(sql);
         return pst.executeUpdate(sql);
+    }
+
+    public static int update(HashMap<String, String> storeData) throws SQLException {
+        int totalPrice = selectedList(storeData);
+
+        String sql = "UPDATE transaction_product SET product_name = '%s', product_count = '%s', total_price = '%s'," +
+                " description = '%s', transaction_time = '%s' WHERE transaction_id = '%s'";
+
+        sql = String.format(sql, storeData.get("productName"), storeData.get("productCount"), totalPrice,
+                storeData.get("description"), storeData.get("transactionTime"), storeData.get("transactionId"));
+        pst = connectDB.prepareStatement(sql);
+        return pst.executeUpdate(sql);
+    }
+
+    private static int selectedList(HashMap<String, String> storeData) throws SQLException {
+        ObservableList<ProductModel> selectedList = FXCollections.observableArrayList(ProductModel.getAllProduct());
+
+        AtomicInteger totalPrice = new AtomicInteger();
+        selectedList.forEach(item -> {
+            if (item.getProductName().equals(storeData.get("productName"))) {
+                int hargaBarang = Integer.parseInt(item.getProductPrice());
+                int unitBarang = Integer.parseInt(storeData.get("productCount"));
+                totalPrice.set(hargaBarang * unitBarang);
+            }
+        });
+        return totalPrice.intValue();
     }
 
     public int getTransactionId() {

@@ -1,9 +1,9 @@
 package com.pbo.simak.controller;
 
+import com.pbo.simak.middleware.Validation;
 import com.pbo.simak.model.ProductModel;
 import com.pbo.simak.model.TransactionModel;
 import com.pbo.simak.utils.SceneUtils;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,14 +15,13 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class TransactionController implements Initializable {
     private final HashMap<String, String> storeData = new HashMap<>();
-
-    private String selectedId;
-    private ObservableList<TransactionModel> transactionList = FXCollections.observableArrayList();
+    private final HashMap<String, String> selectedTransaction = new HashMap<>();
 
     @FXML
     private TableColumn<TransactionModel, String> colDescription;
@@ -67,7 +66,7 @@ public class TransactionController implements Initializable {
         colTime.setCellValueFactory(new PropertyValueFactory<>("transactionTime"));
         colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
 
-        transactionList = TransactionModel.getAllTransactions();
+        ObservableList<TransactionModel> transactionList = TransactionModel.getAllTransactions();
 
         transactionTable.setItems(transactionList);
 
@@ -92,21 +91,47 @@ public class TransactionController implements Initializable {
             return;
         }
 
-        selectedId = colTransactionId.getCellData(index).toString();
+
+        selectedTransaction.put("selectedId", colTransactionId.getCellData(index).toString());
+        selectedTransaction.put("productName", colProductName.getCellData(index));
+        selectedTransaction.put("transactionCount", colUnit.getCellData(index));
+        selectedTransaction.put("totalPrice", colTotalPrice.getCellData(index));
+        selectedTransaction.put("transactionTime", colTime.getCellData(index));
+        selectedTransaction.put("description", colDescription.getCellData(index));
+
+        productName.setValue(selectedTransaction.get("productName"));
+        transactionCount.setText(selectedTransaction.get("transactionCount"));
+        transactionTime.setValue(LocalDate.parse(selectedTransaction.get("transactionTime")));
+        transactionDescription.setText(selectedTransaction.get("description"));
+
     }
 
     public void submitTransactionAction(ActionEvent actionEvent) throws SQLException {
-        storeData.put("productName", productName.getSelectionModel().getSelectedItem());
-        storeData.put("productCount", transactionCount.getText());
-        storeData.put("description", transactionDescription.getText());
-        storeData.put("transactionTime", transactionTime.getValue().toString());
+        boolean isNumber = Validation.validateNumber(transactionCount.getText());
 
-        if (!transactionCount.getText().isBlank() && !transactionDescription.getText().isBlank() && !productName.getSelectionModel().isEmpty()) {
+        if (!isNumber) {
+            transactionMsg.setText("Jumlah Barang Harus Berupa Angka!");
+            return;
+        }
+
+        if (!transactionCount.getText().isBlank()
+                && !transactionDescription.getText().isBlank()
+                && !productName.getSelectionModel().isEmpty()
+                && !(transactionTime.getValue() == null)) {
+
+            storeData.put("productName", productName.getSelectionModel().getSelectedItem());
+            storeData.put("productCount", transactionCount.getText());
+            storeData.put("description", transactionDescription.getText());
+            storeData.put("transactionTime", transactionTime.getValue().toString());
+
             int rowAffected = TransactionModel.store(storeData);
+
             if (rowAffected == 1) {
                 transactionMsg.setText("Berhasil Menambah Data");
+                productName.valueProperty().set(null);
                 transactionCount.clear();
                 transactionDescription.clear();
+                transactionTime.valueProperty().set(null);
                 loadTransaction();
             } else {
                 transactionMsg.setText("Gagal Menambah Data");
@@ -129,14 +154,42 @@ public class TransactionController implements Initializable {
     }
 
 
-    public void deleteTransactionAcction(ActionEvent actionEvent) throws SQLException {
-        int status = TransactionModel.destroy(selectedId);
+    public void deleteTransactionAction(ActionEvent actionEvent) throws SQLException {
+        int status = TransactionModel.destroy(selectedTransaction.get("selectedId"));
         if (status == 0) {
             transactionMsg.setText("Gagal Menghapus Data");
         } else if (status == 1) {
             transactionMsg.setText("Berhasil menghapus Data");
         }
 
+        loadTransaction();
+    }
+
+    public void updateTransactionAction(ActionEvent actionEvent) throws SQLException {
+        boolean isNumber = Validation.validateNumber(transactionCount.getText());
+
+        if (!isNumber) {
+            transactionMsg.setText("Jumlah Barang Harus Berupa Angka!");
+            return;
+        }
+
+        storeData.put("transactionId", selectedTransaction.get("selectedId"));
+        storeData.put("productName", productName.getSelectionModel().getSelectedItem());
+        storeData.put("productCount", transactionCount.getText());
+        storeData.put("description", transactionDescription.getText());
+        storeData.put("transactionTime", transactionTime.getValue().toString());
+
+        int status = TransactionModel.update(storeData);
+
+        if (status == 0) {
+            transactionMsg.setText("Gagal Mengedit Data");
+        } else if (status == 1) {
+            transactionMsg.setText("Berhasil Mengedit Data");
+        }
+        productName.valueProperty().set(null);
+        transactionCount.clear();
+        transactionDescription.clear();
+        transactionTime.valueProperty().set(null);
         loadTransaction();
     }
 }

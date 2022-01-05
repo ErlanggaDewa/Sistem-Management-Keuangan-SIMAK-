@@ -1,7 +1,7 @@
 package com.pbo.simak.controller;
 
-import com.pbo.simak.utils.SceneUtils;
 import com.pbo.simak.model.UserModel;
+import com.pbo.simak.utils.SceneUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -32,7 +32,7 @@ public class RegisterController {
 
     public void registerAction(ActionEvent actionEvent) throws NoSuchAlgorithmException, InvalidKeySpecException {
         if (!email.getText().isBlank() && !fullName.getText().isBlank() && !password.getText().isBlank()) {
-            if (tokenRegister.getText().equals("simak_java_pbo")) {
+            if (tokenRegister.getText().equals("simak_java")) {
 
                 storeData.put("fullName", fullName.getText());
                 storeData.put("email", email.getText());
