@@ -15,16 +15,18 @@ public class TransactionModel extends DatabaseConnection {
     String productCount;
     String totalPrice;
     String description;
+    String transactionTime;
 
-    public TransactionModel() {
-    }
-
-    public TransactionModel(int transactionId, String productName, String productCount, String totalPrice, String description) {
+    public TransactionModel(int transactionId, String productName, String productCount, String totalPrice, String description, String transactionTime) {
         this.transactionId = transactionId;
         this.productName = productName;
         this.productCount = productCount;
         this.totalPrice = totalPrice;
         this.description = description;
+        this.transactionTime = transactionTime;
+    }
+
+    public TransactionModel() {
     }
 
     public static ObservableList<TransactionModel> getAllTransactions() throws SQLException {
@@ -42,8 +44,9 @@ public class TransactionModel extends DatabaseConnection {
             String productCount = rs.getString("product_count");
             String totalPrice = rs.getString("total_price");
             String description = rs.getString("description");
+            String transactionTime = rs.getString("transaction_time");
 
-            selectedList.add(new TransactionModel(transactionId, productName, productCount, totalPrice, description));
+            selectedList.add(new TransactionModel(transactionId, productName, productCount, totalPrice, description, transactionTime));
         }
         return selectedList;
     }
@@ -62,12 +65,10 @@ public class TransactionModel extends DatabaseConnection {
         });
 
 
-        String sql = "INSERT INTO transaction_product VALUES (0, '%s', '%s', '%s', '%s')";
+        String sql = "INSERT INTO transaction_product VALUES (0, '%s', '%s', '%s', '%s', '%s')";
 
         sql = String.format(sql, storeData.get("productName"), storeData.get("productCount"), totalPrice,
-                storeData.get("desctiption"));
-        System.out.println(sql);
-
+                storeData.get("description"), storeData.get("transactionTime"));
         pst = connectDB.prepareStatement(sql);
         return pst.executeUpdate(sql);
     }
@@ -79,7 +80,6 @@ public class TransactionModel extends DatabaseConnection {
         pst = connectDB.prepareStatement(sql);
         return pst.executeUpdate(sql);
     }
-
 
     public int getTransactionId() {
         return transactionId;
@@ -120,6 +120,15 @@ public class TransactionModel extends DatabaseConnection {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getTransactionTime() {
+        return transactionTime;
+    }
+
+    public void setTransactionTime(String transactionTime) {
+        this.transactionTime = transactionTime;
+    }
+
 
 }
 

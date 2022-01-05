@@ -142,10 +142,12 @@ public class ProductController implements Initializable {
     public void viewDashboard(ActionEvent actionEvent) {
     }
 
-    public void viewProduct(ActionEvent actionEvent) {
+    public void viewProduct(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("product.fxml", actionEvent);
     }
 
-    public void viewTransaction(ActionEvent actionEvent) {
+    public void viewTransaction(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("transaction.fxml", actionEvent);
     }
 
     public void logoutAction(ActionEvent actionEvent) throws IOException {

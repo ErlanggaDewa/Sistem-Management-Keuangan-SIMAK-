@@ -9,23 +9,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.LoginController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1236.4" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.LoginController">
     <center>
         <AnchorPane prefHeight="600.0" prefWidth="473.0" style="-fx-background-color: #222831;" BorderPane.alignment="CENTER">
-            <Label fx:id="loginMessage" alignment="CENTER" layoutX="346.0" layoutY="238.0" prefHeight="18.0" prefWidth="310.0" textAlignment="CENTER" textFill="#ff3030">
+            <Label fx:id="loginMessage" alignment="CENTER" layoutX="427.0" layoutY="364.0" prefHeight="22.0" prefWidth="390.0" textAlignment="CENTER" textFill="#ff3030">
                 <font>
                     <Font name="Arial" size="19.0" />
                 </font>
          </Label>
-            <Label layoutX="259.0" layoutY="328.0" prefHeight="18.0" prefWidth="59.0" text="Email" textFill="WHITE" />
-            <TextField fx:id="email" alignment="CENTER" layoutX="346.0" layoutY="324.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="310.0" />
-            <Label layoutX="259.0" layoutY="372.0" prefHeight="18.0" prefWidth="59.0" text="Password" textFill="WHITE" />
-            <PasswordField fx:id="password" alignment="CENTER" layoutX="346.0" layoutY="368.0" prefHeight="26.0" prefWidth="310.0" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="346.0" layoutY="421.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="38.0" prefWidth="310.0" text="Login" />
-            <Text fill="WHITE" layoutX="346.0" layoutY="498.0" onMouseClicked="#registerPage" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account yet ?  Sign Up" textAlignment="CENTER" wrappingWidth="310.0" />
+            <Label layoutX="337.0" layoutY="435.0" prefHeight="18.0" prefWidth="59.0" text="Email" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font></Label>
+            <TextField fx:id="email" alignment="CENTER" layoutX="429.0" layoutY="431.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="390.0" />
+            <Label layoutX="337.0" layoutY="478.0" prefHeight="20.0" prefWidth="68.0" text="Password" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font></Label>
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="429.0" layoutY="475.0" prefHeight="26.0" prefWidth="390.0" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginAction" prefHeight="38.0" prefWidth="390.0" text="Login" />
+            <Text fill="WHITE" layoutX="469.0" layoutY="605.0" onMouseClicked="#registerPage" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account yet ?  Sign Up" textAlignment="CENTER" wrappingWidth="310.0">
+            <font>
+               <Font name="System Bold Italic" size="13.0" />
+            </font></Text>
         </AnchorPane>
     </center>
     <left>
-        <AnchorPane prefHeight="600.0" prefWidth="83.0" style="-fx-background-color: #345B63;" BorderPane.alignment="CENTER" />
+        <AnchorPane prefHeight="700.0" prefWidth="80.0" style="-fx-background-color: #345B63;" BorderPane.alignment="CENTER" />
     </left>
 </BorderPane>

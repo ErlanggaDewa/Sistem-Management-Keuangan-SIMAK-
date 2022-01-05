@@ -138,7 +138,7 @@
                 </TextField>
             </children>
         </Pane>
-        <TableView fx:id="productTable" layoutX="101.0" layoutY="229.0" onMouseClicked="#getSelectedProduct" prefHeight="408.0" prefWidth="618.0">
+        <TableView fx:id="productTable" layoutX="123.0" layoutY="236.0" onMouseClicked="#getSelectedProduct" prefHeight="408.0" prefWidth="618.0">
             <columns>
                 <TableColumn fx:id="colProductId" minWidth="0.0" prefWidth="62.399993896484375" text="ID" />
                 <TableColumn fx:id="colProductName" minWidth="0.0" prefWidth="185.5999755859375" text="Nama Produk" />
@@ -146,11 +146,11 @@
                 <TableColumn fx:id="colCategory" minWidth="0.0" prefWidth="182.39996337890625" text="Kategori" />
             </columns>
         </TableView>
-        <Label layoutX="101.0" layoutY="121.0" prefHeight="18.0" prefWidth="302.0" text="Daftar Produk" textFill="#d7d7d7">
+        <Label layoutX="123.0" layoutY="128.0" prefHeight="18.0" prefWidth="302.0" text="Daftar Produk" textFill="#d7d7d7">
             <font>
                 <Font name="System Bold" size="31.0" />
             </font>
         </Label>
-        <Pane layoutX="101.0" layoutY="188.0" prefHeight="3.0" prefWidth="618.0" style="-fx-background-color: gray;" />
+        <Pane layoutX="123.0" layoutY="195.0" prefHeight="3.0" prefWidth="618.0" style="-fx-background-color: gray;" />
     </children>
 </AnchorPane>
