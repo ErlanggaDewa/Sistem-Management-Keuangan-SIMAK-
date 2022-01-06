@@ -16,62 +16,71 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.ProductController">
     <children>
         <HBox alignment="CENTER_LEFT" layoutX="1.0" prefHeight="65.0" prefWidth="862.0" spacing="20.0" style="-fx-background-color: #206A5D;">
-            <children>
-                <Button mnemonicParsing="false" onAction="#viewDashboard" prefHeight="38.0" prefWidth="148.0" style="-fx-background-color: #333333;" text="DASHBOARD" textFill="WHITE">
-                    <font>
-                        <Font name="Leelawadee UI Bold" size="12.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icon/home.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Button>
-                <Button mnemonicParsing="false" onAction="#viewProduct" prefHeight="138.0" prefWidth="123.0" style="-fx-background-color: #333333;" text="PRODUK" textFill="WHITE">
-                    <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icon/package.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="12.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" onAction="#viewTransaction" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: #333333;" text="PENJUALAN" textFill="WHITE">
-                    <graphic>
-                        <ImageView fitHeight="70.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icon/transfer.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="12.0" />
-                    </font>
-                </Button>
-                <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="74.0" prefWidth="106.0" style="-fx-background-color: #CF3030;" text="LOGOUT" textFill="WHITE">
-                    <HBox.margin>
-                        <Insets left="215.0" />
-                    </HBox.margin>
-                    <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@icon/logout.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font name="System Bold" size="12.0" />
-                    </font>
-                </Button>
-            </children>
             <padding>
                 <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
             </padding>
+         <children>
+            <Button mnemonicParsing="false" onAction="#viewDashboard" prefHeight="38.0" prefWidth="148.0" style="-fx-background-color: #333333;" text="DASHBOARD" textFill="WHITE">
+               <font>
+                  <Font name="Leelawadee UI Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#viewProduct" prefHeight="138.0" prefWidth="123.0" style="-fx-background-color: #333333;" text="PRODUK" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/package.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#viewTransaction" prefHeight="38.0" prefWidth="127.0" style="-fx-background-color: #333333;" text="PENJUALAN" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/transfer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#viewExpenditure" prefHeight="38.0" prefWidth="152.0" style="-fx-background-color: #333333;" text="PENGELUARAN" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/pengeluaran.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: #CF3030;" text="LOGOUT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
         </HBox>
         <Pane layoutX="842.0" prefHeight="700.0" prefWidth="438.0" style="-fx-border-radius: 20; -fx-background-color: #719192;">
             <children>

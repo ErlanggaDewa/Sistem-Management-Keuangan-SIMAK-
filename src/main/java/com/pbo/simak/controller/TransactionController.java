@@ -79,9 +79,6 @@ public class TransactionController implements Initializable {
         productName.setItems(productNames);
     }
 
-    public void logoutAction(ActionEvent actionEvent) throws IOException {
-        SceneUtils.switchTo("login.fxml", actionEvent);
-    }
 
     public void getSelectedProduct(MouseEvent event) {
         int index;
@@ -128,11 +125,7 @@ public class TransactionController implements Initializable {
 
             if (rowAffected == 1) {
                 transactionMsg.setText("Berhasil Menambah Data");
-                productName.valueProperty().set(null);
-                transactionCount.clear();
-                transactionDescription.clear();
-                transactionTime.valueProperty().set(null);
-                loadTransaction();
+                clearScreen();
             } else {
                 transactionMsg.setText("Gagal Menambah Data");
             }
@@ -141,28 +134,16 @@ public class TransactionController implements Initializable {
         }
     }
 
-    public void viewDashboard(ActionEvent actionEvent) {
-    }
-
-
-    public void viewProduct(ActionEvent actionEvent) throws IOException {
-        SceneUtils.switchTo("product.fxml", actionEvent);
-    }
-
-    public void viewTransaction(ActionEvent actionEvent) throws IOException {
-        SceneUtils.switchTo("transaction.fxml", actionEvent);
-    }
-
 
     public void deleteTransactionAction(ActionEvent actionEvent) throws SQLException {
-        int status = TransactionModel.destroy(selectedTransaction.get("selectedId"));
-        if (status == 0) {
+        int rowAffected = TransactionModel.destroy(selectedTransaction.get("selectedId"));
+        if (rowAffected == 0) {
             transactionMsg.setText("Gagal Menghapus Data");
-        } else if (status == 1) {
+        } else if (rowAffected == 1) {
             transactionMsg.setText("Berhasil menghapus Data");
         }
 
-        loadTransaction();
+        clearScreen();
     }
 
     public void updateTransactionAction(ActionEvent actionEvent) throws SQLException {
@@ -179,18 +160,44 @@ public class TransactionController implements Initializable {
         storeData.put("description", transactionDescription.getText());
         storeData.put("transactionTime", transactionTime.getValue().toString());
 
-        int status = TransactionModel.update(storeData);
+        int rowAffected = TransactionModel.update(storeData);
 
-        if (status == 0) {
+        if (rowAffected == 0) {
             transactionMsg.setText("Gagal Mengedit Data");
-        } else if (status == 1) {
+        } else if (rowAffected == 1) {
             transactionMsg.setText("Berhasil Mengedit Data");
         }
+        clearScreen();
+
+    }
+
+
+    private void clearScreen() throws SQLException {
         productName.valueProperty().set(null);
         transactionCount.clear();
         transactionDescription.clear();
         transactionTime.valueProperty().set(null);
         loadTransaction();
+    }
+
+    public void viewDashboard(ActionEvent actionEvent) {
+    }
+
+    public void viewProduct(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("product.fxml", actionEvent);
+    }
+
+    public void viewTransaction(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("transaction.fxml", actionEvent);
+    }
+
+    public void viewExpenditure(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("expenditure.fxml", actionEvent);
+
+    }
+
+    public void logoutAction(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("login.fxml", actionEvent);
     }
 }
 

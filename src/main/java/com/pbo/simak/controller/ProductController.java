@@ -161,6 +161,11 @@ public class ProductController implements Initializable {
         SceneUtils.switchTo("transaction.fxml", actionEvent);
     }
 
+    public void viewExpenditure(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("expenditure.fxml", actionEvent);
+
+    }
+
     public void logoutAction(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("login.fxml", actionEvent);
     }

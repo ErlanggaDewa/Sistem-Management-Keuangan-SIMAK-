@@ -56,9 +56,21 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="74.0" prefWidth="106.0" style="-fx-background-color: #CF3030;" text="LOGOUT" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#viewExpenditure" prefHeight="38.0" prefWidth="152.0" style="-fx-background-color: #333333;" text="PENGELUARAN" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/pengeluaran.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="40.0" prefWidth="126.0" style="-fx-background-color: #CF3030;" text="LOGOUT" textFill="WHITE">
                <HBox.margin>
-                  <Insets left="215.0" />
+                  <Insets />
                </HBox.margin>
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">

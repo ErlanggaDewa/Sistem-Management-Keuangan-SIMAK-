@@ -52,7 +52,7 @@ public class TransactionModel extends DatabaseConnection {
     }
 
     public static int store(HashMap<String, String> storeData) throws SQLException {
-        int totalPrice = selectedList(storeData);
+        int totalPrice = totalPrice(storeData);
 
         String sql = "INSERT INTO transaction_product VALUES (0, '%s', '%s', '%s', '%s', '%s')";
 
@@ -71,7 +71,7 @@ public class TransactionModel extends DatabaseConnection {
     }
 
     public static int update(HashMap<String, String> storeData) throws SQLException {
-        int totalPrice = selectedList(storeData);
+        int totalPrice = totalPrice(storeData);
 
         String sql = "UPDATE transaction_product SET product_name = '%s', product_count = '%s', total_price = '%s'," +
                 " description = '%s', transaction_time = '%s' WHERE transaction_id = '%s'";
@@ -82,7 +82,11 @@ public class TransactionModel extends DatabaseConnection {
         return pst.executeUpdate(sql);
     }
 
-    private static int selectedList(HashMap<String, String> storeData) throws SQLException {
+    private static int totalPrice(HashMap<String, String> storeData) throws SQLException {
+        return selectedList(storeData);
+    }
+
+    static int selectedList(HashMap<String, String> storeData) throws SQLException {
         ObservableList<ProductModel> selectedList = FXCollections.observableArrayList(ProductModel.getAllProduct());
 
         AtomicInteger totalPrice = new AtomicInteger();
