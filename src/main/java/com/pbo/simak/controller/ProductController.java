@@ -150,7 +150,8 @@ public class ProductController implements Initializable {
         loadProduct();
     }
 
-    public void viewDashboard(ActionEvent actionEvent) {
+    public void viewDashboard(ActionEvent actionEvent) throws IOException {
+        SceneUtils.switchTo("dashboard.fxml", actionEvent);
     }
 
     public void viewProduct(ActionEvent actionEvent) throws IOException {

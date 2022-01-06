@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.DashboardController">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="268.0" style="-fx-background-color: #206A5D;">
+         <children>
+            <ImageView fitHeight="218.0" fitWidth="216.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon/simak.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="26.0" layoutY="296.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#viewDashboard" prefHeight="40.0" prefWidth="208.0" style="-fx-background-color: #333333;" text="         DASHBOARD" textFill="WHITE">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="28.0" fitWidth="27.0" layoutX="13.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/home.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="25.0" layoutY="355.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#viewProduct" prefHeight="40.0" prefWidth="208.0" style="-fx-background-color: #333333;" text="  PRODUK" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/package.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="25.0" layoutY="422.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#viewTransaction" prefHeight="40.0" prefWidth="208.0" style="-fx-background-color: #333333;" text="        PENJUALAN" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="70.0" fitWidth="27.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/transfer.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="25.0" layoutY="485.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#viewExpenditure" prefHeight="40.0" prefWidth="208.0" style="-fx-background-color: #333333;" text="             PENGELUARAN" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="29.0" fitWidth="24.0" layoutX="15.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/pengeluaran.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="25.0" layoutY="636.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="40.0" prefWidth="208.0" style="-fx-background-color: #CF3030;" text="    LOGOUT" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="24.0" fitWidth="31.0" layoutX="17.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon/logout.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Group layoutX="296.0" layoutY="91.0">
+         <children>
+            <AnchorPane prefHeight="150.0" prefWidth="194.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <children>
+                  <Pane prefHeight="150.0" prefWidth="78.0" style="-fx-background-color: #31c46e; -fx-background-radius: 10 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="50.0" layoutX="14.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/product.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Group layoutX="93.0" layoutY="21.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="103.0" text="Jumlah" textFill="#2ba966" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="27.0" prefHeight="40.0" prefWidth="78.0" text="Produk" textFill="#2ba966" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label fx:id="labelTotalProduct" layoutX="93.0" layoutY="88.0" prefHeight="40.0" prefWidth="90.0" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="218.0" prefHeight="150.0" prefWidth="194.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <children>
+                  <Pane prefHeight="150.0" prefWidth="78.0" style="-fx-background-color: #b52f72; -fx-background-radius: 10 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="50.0" layoutX="14.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/transaction.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Group layoutX="93.0" layoutY="21.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="103.0" text="Jumlah" textFill="#a82c45" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="27.0" prefHeight="40.0" prefWidth="101.0" text="Penjualan" textFill="#a82c45" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label fx:id="labelTotalTransaction" layoutX="93.0" layoutY="88.0" prefHeight="40.0" prefWidth="90.0" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="437.0" prefHeight="150.0" prefWidth="194.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <children>
+                  <Pane prefHeight="150.0" prefWidth="78.0" style="-fx-background-color: #2f76b5; -fx-background-radius: 10 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="50.0" layoutX="14.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/work-team.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Group layoutX="93.0" layoutY="21.0">
+                     <children>
+                        <Label layoutX="-2.0" prefHeight="40.0" prefWidth="103.0" text="Jumlah" textFill="#328eff" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="-3.0" layoutY="33.0" prefHeight="30.0" prefWidth="101.0" text="Operasional" textFill="#328eff" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label fx:id="labelTotalExpenditure" layoutX="90.0" layoutY="94.0" prefHeight="40.0" prefWidth="89.0" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="654.0" prefHeight="150.0" prefWidth="305.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <children>
+                  <Pane prefHeight="150.0" prefWidth="78.0" style="-fx-background-color: #cc9337; -fx-background-radius: 10 0 0 10;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="50.0" layoutX="14.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icon/money-bag.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Group layoutX="93.0" layoutY="21.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="103.0" text="Total" textFill="#d98600" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutY="27.0" prefHeight="40.0" prefWidth="101.0" text="Pendapatan" textFill="#d98600" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Group>
+                  <Label fx:id="labelTotalMoney" layoutX="125.0" layoutY="91.0" prefHeight="40.0" prefWidth="172.0" text="-" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="93.0" layoutY="91.0" prefHeight="40.0" prefWidth="30.0" text="Rp." wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </Group>
+      <Label layoutX="296.0" layoutY="18.0" prefHeight="54.0" prefWidth="268.0" text="Dashboard" textFill="WHITE">
+         <font>
+            <Font name="Leelawadee UI Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView layoutX="296.0" layoutY="350.0" prefHeight="330.0" prefWidth="959.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="No" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <Label layoutX="296.0" layoutY="276.0" prefHeight="54.0" prefWidth="268.0" text="Transaksi Terbaru" textFill="WHITE">
+         <font>
+            <Font name="Leelawadee UI Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
