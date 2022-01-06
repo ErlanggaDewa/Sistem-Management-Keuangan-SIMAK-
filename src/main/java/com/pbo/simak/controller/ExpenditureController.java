@@ -55,6 +55,7 @@ public class ExpenditureController implements Initializable {
     @FXML
     private DatePicker transactionTime;
 
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -63,7 +64,6 @@ public class ExpenditureController implements Initializable {
             e.printStackTrace();
         }
     }
-
 
     public void deleteExpenditureAction(ActionEvent actionEvent) throws SQLException {
         System.out.println(selectedExpenditure.get("selectedId"));
@@ -153,7 +153,6 @@ public class ExpenditureController implements Initializable {
         }
     }
 
-
     private void clearScreen() throws SQLException {
         expenditureName.valueProperty().set(null);
         expenditurePrice.clear();
@@ -195,7 +194,5 @@ public class ExpenditureController implements Initializable {
 
     }
 
-    public void logoutAction(ActionEvent actionEvent) throws IOException {
-        SceneUtils.switchTo("login.fxml", actionEvent);
-    }
+
 }

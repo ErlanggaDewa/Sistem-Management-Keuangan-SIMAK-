@@ -45,7 +45,7 @@ public class LoginController {
                 do {
                     String passwordHashed = rs.getString("password");
                     if (Authentication.validatePassword(password.getText(), passwordHashed)) {
-                        SceneUtils.switchTo("product.fxml", actionEvent);
+                        SceneUtils.switchTo("dashboard.fxml", actionEvent);
                     } else {
                         loginMessage.setText("User or Password Incorrect");
                     }

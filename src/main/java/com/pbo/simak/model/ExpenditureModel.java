@@ -79,6 +79,23 @@ public class ExpenditureModel extends DatabaseConnection {
         return pst.executeUpdate(sql);
     }
 
+    public static int getTotalExpenditure() throws SQLException {
+        String sql = "SELECT COUNT(*) FROM expenditure";
+        pst = connectDB.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery(sql);
+        rs.next();
+        int count = rs.getInt(1);
+        return count;
+    }
+
+    public static double getPriceExpenditure() throws SQLException {
+        String sql = "SELECT SUM(expenditure_price) FROM expenditure";
+        pst = connectDB.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery(sql);
+        rs.next();
+        int count = rs.getInt(1);
+        return count;
+    }
 
     public int getExpenditureId() {
         return expenditureId;

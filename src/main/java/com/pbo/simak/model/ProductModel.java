@@ -88,6 +88,15 @@ public class ProductModel extends DatabaseConnection {
         return pst.executeUpdate(sql);
     }
 
+    public static int getTotalProduct() throws SQLException {
+        String sql = "SELECT COUNT(*) FROM product";
+        pst = connectDB.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery(sql);
+        rs.next();
+        int count = rs.getInt(1);
+        return count;
+    }
+
     public int getProductId() {
         return productId;
     }

@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: #393E46;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.ExpenditureController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="916.0" spacing="20.0" style="-fx-background-color: #206A5D;">
@@ -62,18 +61,6 @@
                   <ImageView fitHeight="29.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icon/pengeluaran.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="40.0" prefWidth="126.0" style="-fx-background-color: #CF3030;" text="LOGOUT" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icon/logout.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -127,37 +114,37 @@
                </font>
             </Label>
             <TextArea fx:id="expenditureDescription" layoutX="42.0" layoutY="396.0" prefHeight="110.0" prefWidth="302.0" />
-            <Button layoutX="41.0" layoutY="646.0" mnemonicParsing="false" onAction="#deleteExpenditureAction" prefHeight="37.0" prefWidth="302.0" style="-fx-background-color: #960606; -fx-background-radius: 7;" text="Hapus" textFill="WHITE">
+            <Button layoutX="41.0" layoutY="646.0" mnemonicParsing="false" onAction="#deleteExpenditureAction" prefHeight="37.0" prefWidth="302.0" style="-fx-background-color: #960606;" text="Hapus" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="41.0" layoutY="540.0" mnemonicParsing="false" onAction="#submitExpenditureAction" prefHeight="36.0" prefWidth="302.0" style="-fx-background-color: green; -fx-background-radius: 7;" text="Submit" textFill="WHITE">
+            <Button layoutX="41.0" layoutY="540.0" mnemonicParsing="false" onAction="#submitExpenditureAction" prefHeight="36.0" prefWidth="302.0" style="-fx-background-color: green;" text="Submit" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="42.0" layoutY="593.0" mnemonicParsing="false" onAction="#updateExpenditureAction" prefHeight="37.0" prefWidth="302.0" style="-fx-background-color: #cc6d00; -fx-background-radius: 7;" text="Update" textFill="WHITE">
+            <Button layoutX="42.0" layoutY="593.0" mnemonicParsing="false" onAction="#updateExpenditureAction" prefHeight="37.0" prefWidth="302.0" style="-fx-background-color: #cc6d00;" text="Update" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <TableView fx:id="expenditureTable" layoutX="56.0" layoutY="249.0" onMouseClicked="#getSelectedExpenditure" prefHeight="408.0" prefWidth="806.0">
+      <TableView fx:id="expenditureTable" layoutX="56.0" layoutY="228.0" onMouseClicked="#getSelectedExpenditure" prefHeight="420.0" prefWidth="806.0">
          <columns>
             <TableColumn fx:id="colExpenditureId" minWidth="0.0" prefWidth="56.000030517578125" text="ID" />
             <TableColumn fx:id="colExpenditureName" minWidth="0.0" prefWidth="145.59994506835938" text="Jenis Pengeluaran" />
-            <TableColumn fx:id="colTotalPrice" minWidth="0.0" prefWidth="201.60003662109375" text="Total Pengeluaran" />
-            <TableColumn fx:id="colTime" minWidth="0.0" prefWidth="141.60006713867188" text="Tanggal Transaksi" />
+            <TableColumn fx:id="colTotalPrice" minWidth="0.0" prefWidth="203.20001220703125" text="Total Pengeluaran" />
+            <TableColumn fx:id="colTime" minWidth="0.0" prefWidth="141.5999755859375" text="Tanggal Transaksi" />
             <TableColumn fx:id="colDescription" minWidth="0.0" prefWidth="258.4" text="Keterangan" />
          </columns>
       </TableView>
-      <Label layoutX="57.0" layoutY="141.0" prefHeight="18.0" prefWidth="302.0" text="Pengeluaran" textFill="#d7d7d7">
+      <Label layoutX="56.0" layoutY="122.0" prefHeight="18.0" prefWidth="302.0" text="Pengeluaran" textFill="#d7d7d7">
          <font>
             <Font name="System Bold" size="31.0" />
          </font>
       </Label>
-      <Pane layoutX="57.0" layoutY="210.0" prefHeight="3.0" prefWidth="806.0" style="-fx-background-color: gray;" />
+      <Pane layoutX="56.0" layoutY="187.0" prefHeight="3.0" prefWidth="806.0" style="-fx-background-color: gray;" />
    </children>
 </AnchorPane>

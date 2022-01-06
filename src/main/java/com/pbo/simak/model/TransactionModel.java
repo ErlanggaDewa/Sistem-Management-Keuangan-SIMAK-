@@ -59,7 +59,6 @@ public class TransactionModel extends DatabaseConnection {
         sql = String.format(sql, storeData.get("productName"), storeData.get("productCount"), totalPrice,
                 storeData.get("description"), storeData.get("transactionTime"));
         pst = connectDB.prepareStatement(sql);
-        System.out.println(sql);
         return pst.executeUpdate(sql);
     }
 
@@ -99,6 +98,24 @@ public class TransactionModel extends DatabaseConnection {
             }
         });
         return totalPrice.intValue();
+    }
+
+    public static int getTotalTransaction() throws SQLException {
+        String sql = "SELECT COUNT(*) FROM transaction_product";
+        pst = connectDB.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery(sql);
+        rs.next();
+        int count = rs.getInt(1);
+        return count;
+    }
+
+    public static double getPriceTransaction() throws SQLException {
+        String sql = "SELECT SUM(total_price) FROM transaction_product";
+        pst = connectDB.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery(sql);
+        rs.next();
+        int count = rs.getInt(1);
+        return count;
     }
 
     public int getTransactionId() {

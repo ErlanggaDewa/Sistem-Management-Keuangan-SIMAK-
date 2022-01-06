@@ -68,18 +68,6 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#logoutAction" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: #CF3030;" text="LOGOUT" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icon/logout.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
          </children>
         </HBox>
         <Pane layoutX="842.0" prefHeight="700.0" prefWidth="438.0" style="-fx-border-radius: 20; -fx-background-color: #719192;">
@@ -147,7 +135,7 @@
                 </TextField>
             </children>
         </Pane>
-        <TableView fx:id="productTable" layoutX="65.0" layoutY="240.0" onMouseClicked="#getSelectedProduct" prefHeight="408.0" prefWidth="719.0">
+        <TableView fx:id="productTable" layoutX="65.0" layoutY="226.0" onMouseClicked="#getSelectedProduct" prefHeight="414.0" prefWidth="719.0">
             <columns>
                 <TableColumn fx:id="colProductId" minWidth="0.0" prefWidth="62.399993896484375" text="ID" />
                 <TableColumn fx:id="colProductName" minWidth="0.0" prefWidth="256.79994201660156" text="Nama Produk" />
@@ -155,11 +143,11 @@
                 <TableColumn fx:id="colCategory" minWidth="0.0" prefWidth="180.79998779296875" text="Kategori" />
             </columns>
         </TableView>
-        <Label layoutX="65.0" layoutY="125.0" prefHeight="18.0" prefWidth="302.0" text="Daftar Produk" textFill="#d7d7d7">
+        <Label layoutX="64.0" layoutY="115.0" prefHeight="18.0" prefWidth="302.0" text="Daftar Produk" textFill="#d7d7d7">
             <font>
                 <Font name="System Bold" size="31.0" />
             </font>
         </Label>
-        <Pane layoutX="64.0" layoutY="195.0" prefHeight="3.0" prefWidth="719.0" style="-fx-background-color: gray;" />
+        <Pane layoutX="65.0" layoutY="180.0" prefHeight="3.0" prefWidth="719.0" style="-fx-background-color: gray;" />
     </children>
 </AnchorPane>
