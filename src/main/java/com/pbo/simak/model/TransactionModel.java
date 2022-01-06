@@ -59,6 +59,7 @@ public class TransactionModel extends DatabaseConnection {
         sql = String.format(sql, storeData.get("productName"), storeData.get("productCount"), totalPrice,
                 storeData.get("description"), storeData.get("transactionTime"));
         pst = connectDB.prepareStatement(sql);
+        System.out.println(sql);
         return pst.executeUpdate(sql);
     }
 
