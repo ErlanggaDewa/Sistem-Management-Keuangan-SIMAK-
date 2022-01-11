@@ -9,11 +9,11 @@ import java.sql.SQLException;
 import java.util.HashMap;
 
 public class ExpenditureModel extends DatabaseConnection {
-    int expenditureId;
-    String expenditureName;
-    String expenditurePrice;
-    String description;
-    String transactionTime;
+    private int expenditureId;
+    private String expenditureName;
+    private String expenditurePrice;
+    private String description;
+    private String transactionTime;
 
     public ExpenditureModel(int expenditureId, String expenditureName, String expenditurePrice, String description, String transactionTime) {
         this.expenditureId = expenditureId;
@@ -64,9 +64,6 @@ public class ExpenditureModel extends DatabaseConnection {
         return pst.executeUpdate(sql);
     }
 
-    private static int selectedList(HashMap<String, String> storeData) throws SQLException {
-        return selectedList(storeData);
-    }
 
     public static int update(HashMap<String, String> storeData) throws SQLException {
         String sql = "UPDATE expenditure SET expenditure_name = '%s', expenditure_price = '%s', description = '%s', " +

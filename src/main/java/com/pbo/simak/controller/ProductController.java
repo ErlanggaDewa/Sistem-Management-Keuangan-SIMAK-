@@ -3,7 +3,6 @@ package com.pbo.simak.controller;
 import com.pbo.simak.middleware.Validation;
 import com.pbo.simak.model.ProductModel;
 import com.pbo.simak.utils.SceneUtils;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,7 +24,6 @@ public class ProductController implements Initializable {
 
     private final HashMap<String, String> storeData = new HashMap<>();
     private final HashMap<String, String> selectedProduct = new HashMap<>();
-    protected ObservableList<ProductModel> productList = FXCollections.observableArrayList();
 
     @FXML
     private TableView<ProductModel> productTable;
@@ -63,13 +61,14 @@ public class ProductController implements Initializable {
         colPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
         colCategory.setCellValueFactory(new PropertyValueFactory<>("productCategory"));
 
-        productList = ProductModel.getAllProduct();
+        ObservableList<ProductModel> productList = ProductModel.getAllProduct();
 
         productTable.setItems(productList);
 
     }
 
-    public void deleteProductAcction(ActionEvent actionEvent) throws SQLException {
+    @FXML
+    private void deleteProductAcction(ActionEvent actionEvent) throws SQLException {
 
         int status = ProductModel.destroy(selectedProduct.get("productId"));
         if (status == 0) {
@@ -82,7 +81,8 @@ public class ProductController implements Initializable {
 
     }
 
-    public void getSelectedProduct(MouseEvent event) {
+    @FXML
+    private void getSelectedProduct(MouseEvent event) {
         int index;
         index = productTable.getSelectionModel().getSelectedIndex();
 
@@ -104,7 +104,8 @@ public class ProductController implements Initializable {
     }
 
 
-    public void submitProductAction(ActionEvent actionEvent) throws SQLException {
+    @FXML
+    private void submitProductAction(ActionEvent actionEvent) throws SQLException {
         boolean isNumber = Validation.validateNumber(productPrice.getText());
 
         if (!isNumber) {
@@ -133,12 +134,22 @@ public class ProductController implements Initializable {
 
     }
 
-    public void updateProductAcction(ActionEvent actionEvent) throws SQLException {
+    @FXML
+    private void updateProductAcction(ActionEvent actionEvent) throws SQLException {
+        boolean isNumber = Validation.validateNumber(productPrice.getText());
+
+        if (!isNumber) {
+            productMsg.setText("Harga Harus Berupa Angka!");
+            return;
+        }
+
         storeData.put("productId", productId.getText());
         storeData.put("productName", productName.getText());
         storeData.put("productPrice", productPrice.getText());
         storeData.put("productCategory", productCategory.getText());
+
         int status = ProductModel.update(storeData);
+
         if (status == 0) {
             productMsg.setText("Gagal Mengedit Data");
         } else if (status == 1) {
@@ -150,24 +161,25 @@ public class ProductController implements Initializable {
         loadProduct();
     }
 
-    public void viewDashboard(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewDashboard(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("dashboard.fxml", actionEvent);
     }
 
-    public void viewProduct(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewProduct(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("product.fxml", actionEvent);
     }
 
-    public void viewTransaction(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewTransaction(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("transaction.fxml", actionEvent);
     }
 
-    public void viewExpenditure(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewExpenditure(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("expenditure.fxml", actionEvent);
 
     }
 
-    public void logoutAction(ActionEvent actionEvent) throws IOException {
-        SceneUtils.switchTo("login.fxml", actionEvent);
-    }
 }

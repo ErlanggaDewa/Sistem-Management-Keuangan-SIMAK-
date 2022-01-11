@@ -65,7 +65,8 @@ public class ExpenditureController implements Initializable {
         }
     }
 
-    public void deleteExpenditureAction(ActionEvent actionEvent) throws SQLException {
+    @FXML
+    private void deleteExpenditureAction(ActionEvent actionEvent) throws SQLException {
         System.out.println(selectedExpenditure.get("selectedId"));
 
         int rowAffected = ExpenditureModel.destroy(selectedExpenditure.get("selectedId"));
@@ -78,7 +79,8 @@ public class ExpenditureController implements Initializable {
         clearScreen();
     }
 
-    public void getSelectedExpenditure(MouseEvent event) {
+    @FXML
+    private void getSelectedExpenditure(MouseEvent event) {
         int index;
         index = expenditureTable.getSelectionModel().getSelectedIndex();
 
@@ -100,7 +102,8 @@ public class ExpenditureController implements Initializable {
 
     }
 
-    public void submitExpenditureAction(ActionEvent actionEvent) throws SQLException {
+    @FXML
+    private void submitExpenditureAction(ActionEvent actionEvent) throws SQLException {
         boolean isNumber = Validation.validateNumber(expenditurePrice.getText());
 
         if (!isNumber) {
@@ -130,7 +133,8 @@ public class ExpenditureController implements Initializable {
         }
     }
 
-    public void updateExpenditureAction(ActionEvent actionEvent) throws SQLException {
+    @FXML
+    private void updateExpenditureAction(ActionEvent actionEvent) throws SQLException {
         boolean isNumber = Validation.validateNumber(expenditurePrice.getText());
 
         if (!isNumber) {
@@ -177,19 +181,23 @@ public class ExpenditureController implements Initializable {
         expenditureName.setItems(list);
     }
 
-    public void viewDashboard(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewDashboard(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("dashboard.fxml", actionEvent);
     }
 
-    public void viewProduct(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewProduct(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("product.fxml", actionEvent);
     }
 
-    public void viewTransaction(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewTransaction(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("transaction.fxml", actionEvent);
     }
 
-    public void viewExpenditure(ActionEvent actionEvent) throws IOException {
+    @FXML
+    private void viewExpenditure(ActionEvent actionEvent) throws IOException {
         SceneUtils.switchTo("expenditure.fxml", actionEvent);
 
     }

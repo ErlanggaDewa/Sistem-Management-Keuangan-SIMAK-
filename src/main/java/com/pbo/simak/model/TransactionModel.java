@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransactionModel extends DatabaseConnection {
-    int transactionId;
-    String productName;
-    String productCount;
-    String totalPrice;
-    String description;
-    String transactionTime;
+    private int transactionId;
+    private String productName;
+    private String productCount;
+    private String totalPrice;
+    private String description;
+    private String transactionTime;
 
     public TransactionModel(int transactionId, String productName, String productCount, String totalPrice, String description, String transactionTime) {
         this.transactionId = transactionId;

@@ -58,7 +58,7 @@ public class TransactionController implements Initializable {
         }
     }
 
-    public void loadTransaction() throws SQLException {
+    private void loadTransaction() throws SQLException {
         colTransactionId.setCellValueFactory(new PropertyValueFactory<>("transactionId"));
         colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         colTotalPrice.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
@@ -74,13 +74,14 @@ public class TransactionController implements Initializable {
 
     }
 
-    public void loadProductName() throws SQLException {
+    private void loadProductName() throws SQLException {
         ObservableList<String> productNames = ProductModel.getAllProductNames();
         productName.setItems(productNames);
     }
 
 
-    public void getSelectedProduct(MouseEvent event) {
+    @FXML
+    private void getSelectedProduct(MouseEvent event) {
         int index;
         index = transactionTable.getSelectionModel().getSelectedIndex();
 
@@ -103,7 +104,8 @@ public class TransactionController implements Initializable {
 
     }
 
-    public void submitTransactionAction(ActionEvent actionEvent) throws SQLException {
+    @FXML
+    private void submitTransactionAction(ActionEvent actionEvent) throws SQLException {
         boolean isNumber = Validation.validateNumber(transactionCount.getText());
 
         if (!isNumber) {

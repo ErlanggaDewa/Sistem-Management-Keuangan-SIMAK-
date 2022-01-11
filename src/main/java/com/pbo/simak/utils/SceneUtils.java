@@ -33,6 +33,4 @@ public class SceneUtils {
         stage.setScene(scene);
         stage.show();
     }
-
-
 }

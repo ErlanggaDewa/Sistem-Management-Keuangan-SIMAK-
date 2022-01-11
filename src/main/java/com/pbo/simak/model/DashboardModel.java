@@ -3,12 +3,12 @@ package com.pbo.simak.model;
 import com.pbo.simak.database.DatabaseConnection;
 
 public class DashboardModel extends DatabaseConnection {
-    String transactionTime;
-    String productName;
-    String expenditureName;
-    String transactionPrice;
-    String expenditurePrice;
-    String description;
+    private String transactionTime;
+    private String productName;
+    private String expenditureName;
+    private String transactionPrice;
+    private String expenditurePrice;
+    private String description;
 
     public DashboardModel(String transactionTime, String productName, String expenditureName, String transactionPrice, String expenditurePrice, String description) {
         this.transactionTime = transactionTime;

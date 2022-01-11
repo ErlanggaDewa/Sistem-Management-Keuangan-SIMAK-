@@ -10,8 +10,8 @@ import java.util.HashMap;
 
 public class ProductModel extends DatabaseConnection {
 
-    protected int productId;
-    protected String productName, productPrice, productCategory;
+    private int productId;
+    private String productName, productPrice, productCategory;
 
 
     public ProductModel() {

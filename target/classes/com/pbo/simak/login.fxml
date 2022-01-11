@@ -1,40 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1236.4" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.LoginController">
-    <center>
-        <AnchorPane prefHeight="600.0" prefWidth="473.0" style="-fx-background-color: #222831;" BorderPane.alignment="CENTER">
-            <Label fx:id="loginMessage" alignment="CENTER" layoutX="427.0" layoutY="364.0" prefHeight="22.0" prefWidth="390.0" textAlignment="CENTER" textFill="#ff3030">
+   <center>
+        <AnchorPane prefHeight="715.0" prefWidth="1253.0" style="-fx-background-color: #222831;" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="709.0" fitWidth="775.0" layoutX="528.0" layoutY="8.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@icon/motif1.png" />
+            </image>
+         </ImageView>
+         <Group layoutX="455.0" layoutY="219.0">
+            <children>
+               <Circle fill="#86302dbf" radius="146.0" stroke="#f7000000" strokeType="INSIDE" />
+               <Circle fill="WHITE" radius="140.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: #222831;" />
+               <ImageView fitHeight="211.0" fitWidth="213.0" layoutX="-106.0" layoutY="-105.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@icon/simak.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </Group>
+            <Label fx:id="loginMessage" alignment="CENTER" layoutX="262.0" layoutY="414.0" prefHeight="37.0" prefWidth="390.0" textAlignment="CENTER" textFill="#ff9500">
                 <font>
-                    <Font name="Arial" size="19.0" />
+                    <Font name="Trebuchet MS" size="24.0" />
                 </font>
          </Label>
-            <Label layoutX="337.0" layoutY="435.0" prefHeight="18.0" prefWidth="59.0" text="Email" textFill="WHITE">
+            <Label layoutX="167.0" layoutY="490.0" prefHeight="18.0" prefWidth="59.0" text="Email" textFill="WHITE">
             <font>
-               <Font name="System Bold" size="14.0" />
+               <Font name="Tahoma Bold" size="14.0" />
             </font></Label>
-            <TextField fx:id="email" alignment="CENTER" layoutX="429.0" layoutY="431.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="390.0" />
-            <Label layoutX="337.0" layoutY="478.0" prefHeight="20.0" prefWidth="68.0" text="Password" textFill="WHITE">
+            <TextField fx:id="email" alignment="CENTER" layoutX="262.0" layoutY="487.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="390.0" />
+            <Label layoutX="168.0" layoutY="534.0" prefHeight="20.0" prefWidth="83.0" text="Password" textFill="WHITE">
             <font>
-               <Font name="System Bold" size="14.0" />
+               <Font name="Tahoma Bold" size="14.0" />
             </font></Label>
-            <PasswordField fx:id="password" alignment="CENTER" layoutX="429.0" layoutY="475.0" prefHeight="26.0" prefWidth="390.0" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginAction" prefHeight="38.0" prefWidth="390.0" text="Login" />
-            <Text fill="WHITE" layoutX="469.0" layoutY="605.0" onMouseClicked="#registerPage" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account yet ?  Sign Up" textAlignment="CENTER" wrappingWidth="310.0">
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="262.0" layoutY="531.0" prefHeight="26.0" prefWidth="390.0" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="262.0" layoutY="582.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginAction" prefHeight="38.0" prefWidth="390.0" style="-fx-background-color: #ac1e1e;" text="Login" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font></Button>
+            <Text fill="WHITE" layoutX="302.0" layoutY="661.0" onMouseClicked="#registerPage" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have an account yet ?  Sign Up" textAlignment="CENTER" wrappingWidth="310.0">
             <font>
                <Font name="System Bold Italic" size="13.0" />
             </font></Text>
         </AnchorPane>
-    </center>
-    <left>
-        <AnchorPane prefHeight="700.0" prefWidth="80.0" style="-fx-background-color: #345B63;" BorderPane.alignment="CENTER" />
-    </left>
+   </center>
 </BorderPane>

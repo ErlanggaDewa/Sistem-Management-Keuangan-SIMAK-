@@ -16,7 +16,8 @@ import java.util.HashMap;
 
 
 public class RegisterController {
-    HashMap<String, String> storeData = new HashMap<>();
+    private final HashMap<String, String> storeData = new HashMap<>();
+    private final String TOKEN_REGISTER = "simak_java";
 
     @FXML
     private PasswordField tokenRegister;
@@ -32,7 +33,7 @@ public class RegisterController {
 
     public void registerAction(ActionEvent actionEvent) throws NoSuchAlgorithmException, InvalidKeySpecException {
         if (!email.getText().isBlank() && !fullName.getText().isBlank() && !password.getText().isBlank()) {
-            if (tokenRegister.getText().equals("simak_java")) {
+            if (tokenRegister.getText().equals(TOKEN_REGISTER)) {
 
                 storeData.put("fullName", fullName.getText());
                 storeData.put("email", email.getText());
@@ -52,7 +53,8 @@ public class RegisterController {
     }
 
 
-    public void loginPageRedirect(MouseEvent mouseEvent) throws IOException {
+    @FXML
+    private void loginPageRedirect(MouseEvent mouseEvent) throws IOException {
         SceneUtils.switchTo("login.fxml", mouseEvent);
     }
 }

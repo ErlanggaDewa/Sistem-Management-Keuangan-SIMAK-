@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 
 public class LoginController {
-    HashMap<String, String> storeData = new HashMap<>();
+    private final HashMap<String, String> storeData = new HashMap<>();
 
 
     @FXML
@@ -29,11 +29,13 @@ public class LoginController {
     private Label loginMessage;
 
 
-    public void registerPage(MouseEvent mouseEvent) throws IOException {
+    @FXML
+    private void registerPage(MouseEvent mouseEvent) throws IOException {
         SceneUtils.switchTo("register.fxml", mouseEvent);
     }
 
-    public void loginAction(ActionEvent actionEvent) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException, IOException {
+    @FXML
+    private void loginAction(ActionEvent actionEvent) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException, IOException {
         storeData.put("email", email.getText());
         storeData.put("password", password.getText());
         if (!email.getText().isBlank() && !password.getText().isBlank()) {

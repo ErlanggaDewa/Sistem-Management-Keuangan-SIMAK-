@@ -16,9 +16,10 @@ public class SimakApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(
-                SimakApplication.class.getResource("dashboard.fxml")
+                SimakApplication.class.getResource("login.fxml")
         );
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
         stage.setTitle("Sistem Management Keuangan");
         stage.setScene(scene);
         stage.show();
