@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="SIMAK" options="--add-exports javafx.controls/com.sun.javafx.scene.control.skin=com.pbo.simak" />
+      <module name="SIMAK" options="" />
     </option>
   </component>
 </project>

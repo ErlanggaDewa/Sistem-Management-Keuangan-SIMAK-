@@ -26,7 +26,7 @@
                <Image url="@icon/right.png" />
             </image>
          </ImageView>
-         <Group layoutX="566.0" layoutY="133.0">
+         <Group layoutX="536.0" layoutY="133.0">
             <children>
                <Circle fill="#ac8949bf" layoutX="84.0" layoutY="28.0" radius="126.0" stroke="BLACK" strokeType="INSIDE" />
                <Circle fill="WHITE" layoutX="84.0" layoutY="28.0" radius="119.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #222831;" />
