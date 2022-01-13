@@ -11,6 +11,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(to right, #232323, #363636, #4b4b4b, #606060, #767676);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pbo.simak.controller.DashboardController">
    <children>
+      <ImageView fitHeight="210.0" fitWidth="634.0" layoutX="265.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/bottomleft.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="210.0" fitWidth="634.0" layoutX="765.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/topright.png" />
+         </image>
+      </ImageView>
       <Pane prefHeight="700.0" prefWidth="268.0" style="-fx-background-color: #206A5D;">
          <children>
             <ImageView fitHeight="218.0" fitWidth="216.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -95,7 +105,7 @@
             <Font name="Leelawadee UI Bold" size="36.0" />
          </font>
       </Label>
-      <Pane layoutX="388.0" layoutY="147.0" prefHeight="3.0" prefWidth="794.0" style="-fx-background-color: gray;" />
+      <Pane layoutX="388.0" layoutY="147.0" prefHeight="3.0" prefWidth="794.0" style="-fx-background-color: white;" />
       <AnchorPane layoutX="388.0" layoutY="199.0" prefHeight="150.0" prefWidth="374.0" style="-fx-background-color: white; -fx-background-radius: 10;">
          <children>
             <Pane prefHeight="150.0" prefWidth="103.0" style="-fx-background-color: #31c46e; -fx-background-radius: 10 0 0 10;">

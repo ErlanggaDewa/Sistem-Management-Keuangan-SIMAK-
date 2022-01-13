@@ -21,4 +21,5 @@ module com.pbo.simak {
     opens com.pbo.simak.utils to javafx.fxml;
     exports com.pbo.simak.model;
     opens com.pbo.simak.model to javafx.fxml;
+    
 }
